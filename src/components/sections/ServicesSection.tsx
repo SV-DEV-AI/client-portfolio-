@@ -20,7 +20,7 @@ export default function ServicesSection() {
         </RevealOnScroll>
         
         <RevealOnScroll direction="up" delay={0.1}>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.1] tracking-tight mb-20 max-w-3xl">
+          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-display font-bold leading-[1.1] tracking-tight mb-20 max-w-3xl">
             We provide a comprehensive suite of creative services under one roof.
           </h2>
         </RevealOnScroll>
@@ -49,7 +49,7 @@ export default function ServicesSection() {
                         {service.id}
                       </span>
                       <h3 className={cn(
-                        "text-3xl md:text-5xl font-display font-bold transition-colors duration-500",
+                        "text-[clamp(1.75rem,4vw,3rem)] font-display font-bold transition-colors duration-500",
                         isActive || isHovered ? "text-accent-primary" : "text-foreground"
                       )}>
                         {service.title}

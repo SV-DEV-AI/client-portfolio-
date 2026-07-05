@@ -20,7 +20,7 @@ export default function PortfolioShowcase() {
               <SectionLabel>Selected Work</SectionLabel>
             </RevealOnScroll>
             <RevealOnScroll direction="up" delay={0.1}>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.1] tracking-tight">
+              <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-display font-bold leading-[1.1] tracking-tight">
                 Crafting visual experiences that stand out.
               </h2>
             </RevealOnScroll>
@@ -67,7 +67,7 @@ export default function PortfolioShowcase() {
                       <span className="w-1 h-1 rounded-full bg-accent-primary" />
                       <span>{project.category}</span>
                     </div>
-                    <h3 className="text-3xl font-display font-bold group-hover:text-accent-primary transition-colors duration-300">
+                    <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-display font-bold group-hover:text-accent-primary transition-colors duration-300">
                       {project.title}
                     </h3>
                   </div>

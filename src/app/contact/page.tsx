@@ -125,8 +125,10 @@ export default function ContactPage() {
                       <input 
                         type="text" 
                         id="name" 
+                        name="name"
+                        autoComplete="name"
                         required
-                        className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary transition-colors"
+                        className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -135,8 +137,10 @@ export default function ContactPage() {
                       <input 
                         type="email" 
                         id="email" 
+                        name="email"
+                        autoComplete="email"
                         required
-                        className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary transition-colors"
+                        className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -170,7 +174,7 @@ export default function ContactPage() {
                   <button 
                     type="submit"
                     disabled={formStatus === "submitting"}
-                    className={`w-full flex items-center justify-center space-x-2 bg-white text-black font-medium py-5 rounded-xl hover:bg-accent-primary hover:text-white transition-colors duration-300 ${formStatus === "submitting" ? "opacity-70 cursor-wait" : ""}`}
+                    className={`w-full flex items-center justify-center space-x-2 bg-white text-black font-medium py-5 rounded-xl hover:bg-accent-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors duration-300 ${formStatus === "submitting" ? "opacity-70 cursor-wait" : ""}`}
                   >
                     <span>{formStatus === "submitting" ? "Sending..." : "Send Message"}</span>
                     {!formStatus && <Send size={18} />}

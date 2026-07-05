@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -20,9 +20,16 @@ export default function MagneticButton({
 }: MagneticButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isPointer, setIsPointer] = useState(true);
+
+  // Run on mount to check if it's a touch device
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+    setIsPointer(mediaQuery.matches);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!buttonRef.current) return;
+    if (!buttonRef.current || !isPointer) return;
     const { clientX, clientY } = e;
     const { width, height, left, top } = buttonRef.current.getBoundingClientRect();
     const x = clientX - (left + width / 2);
@@ -31,7 +38,7 @@ export default function MagneticButton({
   };
 
   const handleMouseLeave = () => {
-    setPosition({ x: 0, y: 0 });
+    if (isPointer) setPosition({ x: 0, y: 0 });
   };
 
   const variants = {
@@ -48,7 +55,7 @@ export default function MagneticButton({
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       className={cn(
-        "relative flex items-center justify-center px-8 py-4 rounded-full font-medium transition-colors duration-300 border magnetic overflow-hidden group",
+        "relative flex items-center justify-center px-8 py-4 rounded-full font-medium transition-colors duration-300 border magnetic overflow-hidden group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         variants[variant],
         className
       )}

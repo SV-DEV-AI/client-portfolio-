@@ -57,7 +57,7 @@ export default function Hero() {
             </span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-display font-bold leading-[0.9] tracking-tight mb-8">
+          <h1 className="text-[clamp(3rem,8vw,7rem)] font-display font-bold leading-[0.9] tracking-tight mb-8">
             <SplitText text="We Craft Visual Stories That Move People." delay={0.4} stagger={0.05} />
           </h1>
           

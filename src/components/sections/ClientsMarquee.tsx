@@ -19,7 +19,13 @@ export default function ClientsMarquee() {
         </RevealOnScroll>
       </div>
 
-      <div className="flex flex-col space-y-12 md:space-y-20 relative z-10">
+      <div 
+        className="flex flex-col space-y-12 md:space-y-20 relative z-10"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+        }}
+      >
         {/* Row 1: Left to Right */}
         <div className="flex w-[200vw] overflow-hidden">
           <motion.div
@@ -66,10 +72,6 @@ export default function ClientsMarquee() {
           </motion.div>
         </div>
       </div>
-      
-      {/* Gradients to fade edges */}
-      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-background to-transparent z-20 pointer-events-none hidden md:block" />
-      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-background to-transparent z-20 pointer-events-none hidden md:block" />
     </section>
   );
 }
