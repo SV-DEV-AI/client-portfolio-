@@ -152,11 +152,12 @@ export default function ContactPage() {
                       id="project" 
                       className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary transition-colors appearance-none"
                     >
-                      <option>Brand Identity</option>
-                      <option>Film Production</option>
-                      <option>Broadcast Design</option>
-                      <option>Motion Graphics</option>
-                      <option>Other</option>
+                      <option value="" disabled defaultValue="">Select a project type...</option>
+                      <option value="Brand Identity">Brand Identity</option>
+                      <option value="Film Production">Film Production</option>
+                      <option value="Broadcast Design">Broadcast Design</option>
+                      <option value="Motion Graphics">Motion Graphics</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   
@@ -177,7 +178,7 @@ export default function ContactPage() {
                     className={`w-full flex items-center justify-center space-x-2 bg-white text-black font-medium py-5 rounded-xl hover:bg-accent-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors duration-300 ${formStatus === "submitting" ? "opacity-70 cursor-wait" : ""}`}
                   >
                     <span>{formStatus === "submitting" ? "Sending..." : "Send Message"}</span>
-                    {!formStatus && <Send size={18} />}
+                    {formStatus === "idle" && <Send size={18} />}
                   </button>
                 </form>
               )}

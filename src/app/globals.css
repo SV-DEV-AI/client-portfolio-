@@ -82,6 +82,13 @@ html, body {
   background-clip: text;
 }
 
+.text-gradient-gold {
+  background: linear-gradient(to right, #D4AF37, #FFDF00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* New Utilities for Morphed Studios Rebuild */
 .video-canvas {
   width: 100vw;
@@ -145,4 +152,11 @@ html, body {
   pointer-events: none;
   animation: grain 8s steps(10) infinite;
   z-index: 50;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion) {
+  .film-grain::after {
+    animation: none;
+  }
 }

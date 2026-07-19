@@ -9,25 +9,25 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1603525418197-009774deff4f?q=80&w=2000&auto=format&fit=crop",
+    src: "/images/client-library/IMG_20190222_111013.jpg",
     alt: "Studio Control Room",
     caption: "Main Control Room",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2000&auto=format&fit=crop",
+    src: "/images/client-library/IMG_20190222_153830.jpg",
     alt: "Camera Gear",
     caption: "Red Komodo Setup",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2000&auto=format&fit=crop",
+    src: "/images/client-library/IMG_20190223_205634.jpg",
     alt: "Editing Bay",
     caption: "Color Grading Suite",
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1590845947376-2638caa89309?q=80&w=2000&auto=format&fit=crop",
+    src: "/images/client-library/IMG_20190225_113105.jpg",
     alt: "Lighting Rig",
     caption: "Studio A Lighting Grid",
   },

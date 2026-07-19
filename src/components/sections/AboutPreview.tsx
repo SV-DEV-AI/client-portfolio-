@@ -49,7 +49,7 @@ export default function AboutPreview() {
           {/* Right: Image */}
           <div className="lg:col-span-5 h-[500px] lg:h-[700px] w-full">
             <ImageReveal
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000&auto=format&fit=crop"
+              src="/images/client-library/453A0451.JPG"
               alt="Morphed Studios Team Collaboration"
               className="w-full h-full rounded-2xl"
             />

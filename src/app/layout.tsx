@@ -18,8 +18,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Morphed Studios | AV & Broadcast Graphics Production House",
+  title: {
+    default: "Morphed Studios | AV & Broadcast Graphics Production House",
+    template: "%s | Morphed Studios",
+  },
   description: "A premier creative agency specializing in broadcast design, high-end film production, and immersive AV solutions.",
+  openGraph: {
+    type: "website",
+    title: "Morphed Studios | AV & Broadcast Graphics Production House",
+    description: "A premier creative agency specializing in broadcast design, high-end film production, and immersive AV solutions.",
+    siteName: "Morphed Studios",
+    url: "https://morphed.studio", // Update with actual domain
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Morphed Studios | AV & Broadcast Graphics Production House",
+    description: "A premier creative agency specializing in broadcast design, high-end film production, and immersive AV solutions.",
+  },
 };
 
 export default function RootLayout({

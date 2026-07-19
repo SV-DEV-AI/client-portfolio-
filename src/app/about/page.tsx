@@ -26,7 +26,7 @@ export default function AboutPage() {
         <RevealOnScroll direction="up" delay={0.2} className="mb-32">
           <div className="relative h-[50vh] md:h-[70vh] w-full rounded-2xl overflow-hidden">
             <ImageReveal
-              src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2000&auto=format&fit=crop"
+              src="/images/client-library/IMG_20180914_152556.jpg"
               alt="Morphed Studios Office"
               className="w-full h-full"
             />

@@ -38,15 +38,15 @@ export default function Hero() {
             loop 
             playsInline 
             preload="metadata"
-            className="video-canvas z-10"
-            // src="/videos/showreel-preview.mp4" // To be added by client
-          >
-            {/* Fallback animated background representing motion */}
-            <div className="absolute inset-0 z-0 opacity-30">
-              <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-accent-primary/20 blur-[120px] animate-pulse" style={{ animationDuration: "8s" }} />
-              <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-accent-secondary/20 blur-[150px] animate-pulse" style={{ animationDuration: "12s", animationDelay: "2s" }} />
-            </div>
-          </video>
+            className="video-canvas z-10 object-cover"
+            poster="/images/client-library/IMG_20180914_152556.jpg"
+          />
+          
+          {/* Fallback animated background representing motion */}
+          <div className="absolute inset-0 z-0 opacity-30">
+            <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-accent-primary/20 blur-[120px] animate-pulse" style={{ animationDuration: "8s" }} />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-accent-secondary/20 blur-[150px] animate-pulse" style={{ animationDuration: "12s", animationDelay: "2s" }} />
+          </div>
 
           {/* Vignette Overlay for cinematic feel */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-20 pointer-events-none" />
@@ -74,6 +74,13 @@ export default function Hero() {
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-12 left-6 md:left-12 z-40 flex flex-col items-center cursor-pointer"
           onClick={scrollToAbout}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              scrollToAbout();
+            }
+          }}
         >
           <span className="text-[10px] uppercase tracking-widest mb-4 rotate-180 text-white/50" style={{ writingMode: 'vertical-rl' }}>
             Scroll Down
