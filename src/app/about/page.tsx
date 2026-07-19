@@ -8,7 +8,7 @@ import { team } from "@/data/team";
 
 export default function AboutPage() {
   return (
-    <div className="bg-background min-h-screen pt-12 pb-32">
+    <div className="bg-background min-h-screen pt-32 md:pt-40 pb-32">
       <div className="container mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="mb-20">
