@@ -74,6 +74,7 @@ export default function BehindTheScenes() {
                 src={image.src}
                 alt={image.alt}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 35vw"
                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

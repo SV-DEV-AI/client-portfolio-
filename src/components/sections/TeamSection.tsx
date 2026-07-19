@@ -33,27 +33,21 @@ export default function TeamSection() {
                     src={member.image}
                     alt={member.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105"
                   />
                   
-                  {/* Desktop Hover Info */}
-                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6 flex flex-col justify-end">
-                    <p className="text-sm text-gray-300 font-light leading-relaxed transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                  {/* Responsive Bio Info (Desktop Hover + Mobile Inline) */}
+                  <div className="mt-4 lg:absolute lg:inset-0 lg:mt-0 lg:bg-black/80 lg:opacity-0 group-hover:lg:opacity-100 transition-opacity duration-500 lg:p-6 flex flex-col lg:justify-end">
+                    <p className="text-sm text-gray-400 lg:text-gray-300 font-light leading-relaxed transform lg:translate-y-4 group-hover:lg:translate-y-0 transition-transform duration-500 delay-100">
                       {member.bio}
                     </p>
                   </div>
                 </div>
                 
-                <div>
+                <div className="mt-4 lg:mt-0">
                   <h3 className="text-2xl font-display font-bold mb-1">{member.name}</h3>
                   <p className="text-accent-primary text-sm uppercase tracking-wider">{member.role}</p>
-                </div>
-                
-                {/* Mobile Info (visible without hover) */}
-                <div className="lg:hidden mt-4">
-                  <p className="text-sm text-gray-400 font-light leading-relaxed">
-                    {member.bio}
-                  </p>
                 </div>
               </div>
             </RevealOnScroll>

@@ -98,17 +98,10 @@ function ProjectCard({ project, spanClass }: { project: Project, spanClass: stri
 
   const handleMouseEnter = () => {
     setIsHovered(true);
-    if (videoRef.current) {
-      videoRef.current.play().catch(e => console.error("Video play failed:", e));
-    }
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
   };
 
   return (
@@ -128,21 +121,23 @@ function ProjectCard({ project, spanClass }: { project: Project, spanClass: stri
             src={project.thumbnail}
             alt={project.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover"
           />
         </div>
 
         {/* Video Preview (Visible and playing when hovered) */}
-        <div className={`absolute inset-0 transition-opacity duration-500 ${isHovered ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-          <video
-            ref={videoRef}
-            src={project.previewVideo}
-            muted
-            loop
-            playsInline
-            preload="none"
-            className="w-full h-full object-cover"
-          />
+        <div className={`absolute inset-0 transition-opacity duration-500 ${isHovered ? 'opacity-100 z-10' : 'opacity-0 z-0'} hidden md:block`}>
+          {isHovered && (
+            <video
+              src={project.previewVideo}
+              muted
+              loop
+              playsInline
+              autoPlay
+              className="w-full h-full object-cover"
+            />
+          )}
         </div>
 
         {/* Info Overlay */}
