@@ -3,8 +3,8 @@ export const company = {
   tagline: "An Innovations Company",
   founded: "2019",
   email: "themorphed@gmail.com",
-  phone: "+91 98765 43210", // Placeholder
-  whatsapp: "+91 98765 43210", // Placeholder
+  phone: "+91 98119 94104",
+  whatsapp: "+91 83739 06248",
   address: {
     line1: "A-531, Lane No-20",
     line2: "Sector-46",
@@ -14,9 +14,9 @@ export const company = {
     country: "India",
   },
   socials: {
-    youtube: "https://youtube.com", // Placeholder
-    instagram: "https://instagram.com", // Placeholder
-    linkedin: "https://linkedin.com", // Placeholder
+    youtube: "https://www.youtube.com/channel/UC5jIuCqvUB7F2ZLteiru72g",
+    facebook: "https://www.facebook.com/morphedstudios/",
+    linkedin: "https://www.linkedin.com/company/morphed-studios/",
   },
   clients: [
     "Zee Media",
