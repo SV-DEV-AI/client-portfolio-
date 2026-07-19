@@ -99,7 +99,7 @@ function ProjectCard({ project, spanClass }: { project: Project, spanClass: stri
   const handleMouseEnter = () => {
     setIsHovered(true);
     if (videoRef.current) {
-      videoRef.current.play().catch(e => console.log("Video play failed:", e));
+      videoRef.current.play().catch(e => console.error("Video play failed:", e));
     }
   };
 
