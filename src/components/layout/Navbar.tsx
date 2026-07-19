@@ -30,13 +30,21 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-          isScrolled ? "py-4 glass-panel" : "py-8 bg-transparent"
+          "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300 rounded-full",
+          isScrolled ? "py-3 px-6 glass-panel" : "py-4 px-6 bg-transparent"
         )}
       >
-        <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <Link href="/" className="relative z-50 text-2xl font-display font-bold tracking-tighter">
-            MOR<span className="text-accent-primary">PH</span>ED<span className="text-accent-secondary text-sm ml-1 font-normal uppercase tracking-widest">Studios</span>
+        <div className="flex justify-between items-center">
+          <Link href="/" className="relative z-50 flex items-center gap-3">
+            <div className="flex flex-col">
+              <div className="flex items-end leading-none -mb-1">
+                <span className="text-3xl font-black tracking-tighter text-white">M</span>
+                <span className="text-3xl font-black tracking-tighter text-accent-primary">S</span>
+              </div>
+              <div className="text-[9px] font-bold uppercase tracking-widest mt-1">
+                morphed<span className="text-accent-primary">studio</span>
+              </div>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -45,10 +53,10 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm uppercase tracking-widest font-medium text-foreground hover:text-accent-primary transition-colors relative group"
+                className="text-xs uppercase tracking-[0.2em] font-medium text-foreground hover:text-accent-primary transition-colors relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-primary transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 w-0 h-px bg-accent-primary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </nav>

@@ -18,8 +18,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Morphed Studios | Creative Agency & Film Production",
-  description: "A creative agency specializing in brand strategy, broadcast design, and film production based in Noida, India.",
+  title: "Morphed Studios | AV & Broadcast Graphics Production House",
+  description: "A premier creative agency specializing in broadcast design, high-end film production, and immersive AV solutions.",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
           <CustomCursor />
           <Navbar />
           <PageTransition>
-            <main className="min-h-screen pt-24">
+            <main className="min-h-screen">
               {children}
             </main>
           </PageTransition>

@@ -1,6 +1,6 @@
 export const company = {
   name: "Morphed Studios Private Limited",
-  tagline: "Your go-to creative agency",
+  tagline: "An Innovations Company",
   founded: "2019",
   email: "themorphed@gmail.com",
   phone: "+91 98765 43210", // Placeholder

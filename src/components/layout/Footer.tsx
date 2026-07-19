@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="max-w-4xl">
           <h2 className="text-5xl md:text-7xl font-display font-bold leading-tight mb-8">
             Let's create something <br />
-            <span className="text-gradient-gold">extraordinary</span> together.
+            <span className="text-gradient-red">extraordinary</span> together.
           </h2>
           <Link
             href="/contact"
@@ -31,8 +31,16 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-1">
-            <Link href="/" className="text-2xl font-display font-bold tracking-tighter block mb-4">
-              MOR<span className="text-accent-primary">PH</span>ED
+            <Link href="/" className="relative z-50 flex items-center gap-3 mb-6">
+              <div className="flex flex-col">
+                <div className="flex items-end leading-none -mb-1">
+                  <span className="text-4xl font-black tracking-tighter text-white">M</span>
+                  <span className="text-4xl font-black tracking-tighter text-accent-primary">S</span>
+                </div>
+                <div className="text-[10px] font-bold uppercase tracking-widest mt-1">
+                  morphed<span className="text-accent-primary">studio</span>
+                </div>
+              </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               A creative agency based in Noida, specializing in brand strategy, broadcast design, and film production.

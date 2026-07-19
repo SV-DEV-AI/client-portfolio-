@@ -5,6 +5,7 @@ import PortfolioShowcase from "@/components/sections/PortfolioShowcase";
 import TeamSection from "@/components/sections/TeamSection";
 import ClientsMarquee from "@/components/sections/ClientsMarquee";
 import ContactCTA from "@/components/sections/ContactCTA";
+import BehindTheScenes from "@/components/sections/BehindTheScenes";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutPreview />
       <ServicesSection />
       <PortfolioShowcase />
+      <BehindTheScenes />
       <TeamSection />
       <ClientsMarquee />
       <ContactCTA />

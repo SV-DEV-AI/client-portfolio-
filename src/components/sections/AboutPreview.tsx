@@ -21,7 +21,7 @@ export default function AboutPreview() {
             
             <RevealOnScroll direction="up" delay={0.1}>
               <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-display font-bold leading-[1.1] tracking-tight mb-8">
-                A Creative Agency Built on <span className="text-gradient-gold">Craft & Strategy</span>
+                A Creative Agency Built on <span className="text-gradient-red">Craft & Strategy</span>
               </h2>
             </RevealOnScroll>
             
