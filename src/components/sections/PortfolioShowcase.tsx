@@ -58,7 +58,7 @@ export default function PortfolioShowcase() {
         </div>
 
         {/* Asymmetric Media Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px] md:auto-rows-[350px]">
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px] md:auto-rows-[350px]">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => {
               // Determine grid span based on aspectRatio
@@ -113,7 +113,6 @@ function ProjectCard({ project, spanClass }: { project: Project, spanClass: stri
 
   return (
     <motion.div
-      layout
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}

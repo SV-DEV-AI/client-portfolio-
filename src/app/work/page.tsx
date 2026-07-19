@@ -53,12 +53,11 @@ export default function WorkPage() {
         </RevealOnScroll>
 
         {/* Projects Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20">
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20">
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
