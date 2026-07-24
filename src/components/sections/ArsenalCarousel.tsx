@@ -52,7 +52,7 @@ export default function ArsenalCarousel() {
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const scrollAmount = window.innerWidth > 768 ? window.innerWidth * 0.4 : window.innerWidth * 0.8;
+      const scrollAmount = window.innerWidth > 768 ? window.innerWidth * 0.6 : window.innerWidth * 0.8;
       scrollContainerRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
@@ -73,7 +73,7 @@ export default function ArsenalCarousel() {
         </div>
         
         {/* Navigation Arrows */}
-        <div className="hidden md:flex gap-4">
+        <div className="hidden md:flex gap-4 relative z-10">
           <button 
             onClick={() => scroll('left')} 
             disabled={!canScrollLeft}
