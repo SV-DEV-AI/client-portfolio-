@@ -53,8 +53,8 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1400px] transition-all duration-300",
-          isScrolled ? "py-4 px-8 glass-panel rounded-full" : "py-6 px-8 bg-transparent"
+          "fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1400px] transition-all duration-300 pt-[calc(env(safe-area-inset-top,0)+1rem)]",
+          isScrolled ? "pb-4 px-8 glass-panel rounded-full mt-4" : "pb-6 px-8 bg-transparent mt-4"
         )}
       >
         <div className="flex justify-between items-center w-full">

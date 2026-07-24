@@ -26,7 +26,7 @@ export default function Hero() {
 
   return (
     <>
-      <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-black film-grain">
+      <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden bg-black film-grain">
         {/* Full-bleed Video Background */}
         <motion.div style={{ y, opacity }} className="absolute inset-0 w-full h-full">
           {/* Gradient placeholder in case video doesn't load immediately */}

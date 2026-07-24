@@ -14,7 +14,7 @@ export default function ContactCTA() {
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   return (
-    <section ref={containerRef} className="relative py-24 md:py-32 overflow-hidden bg-black flex items-center justify-center border-t border-white/10" id="contact">
+    <section ref={containerRef} className="relative py-16 md:py-32 overflow-hidden bg-black flex items-center justify-center border-t border-white/10" id="contact">
       {/* Parallax Background Elements */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 opacity-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/10 rounded-full mix-blend-overlay" />
@@ -31,7 +31,7 @@ export default function ContactCTA() {
           transition={{ duration: 0.8 }}
         >
           <span className="text-sm font-bold uppercase tracking-widest mb-6 block text-gray-400">Ready to start?</span>
-          <h2 className="text-5xl md:text-8xl font-sans font-bold leading-[0.9] tracking-tighter mb-12 max-w-5xl mx-auto uppercase">
+          <h2 className="text-4xl sm:text-5xl md:text-8xl font-sans font-bold leading-[0.9] tracking-tighter mb-12 max-w-5xl mx-auto uppercase">
             Let&apos;s create <br/> something iconic.
           </h2>
           

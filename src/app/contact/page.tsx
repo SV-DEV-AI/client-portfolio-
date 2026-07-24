@@ -130,7 +130,7 @@ export default function ContactPage() {
                         name="name"
                         autoComplete="name"
                         required
-                        className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors"
+                        className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                         name="email"
                         autoComplete="email"
                         required
-                        className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors"
+                        className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                     <label htmlFor="project" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Project Type</label>
                     <select 
                       id="project" 
-                      className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary transition-colors appearance-none"
+                      className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-colors appearance-none"
                     >
                       <option value="" disabled defaultValue="">Select a project type...</option>
                       <option value="Brand Identity">Brand Identity</option>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                       id="message" 
                       rows={5}
                       required
-                      className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-accent-primary transition-colors resize-none"
+                      className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-colors resize-none"
                       placeholder="Tell us about your project..."
                     ></textarea>
                   </div>
