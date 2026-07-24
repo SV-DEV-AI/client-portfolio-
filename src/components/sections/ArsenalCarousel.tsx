@@ -82,7 +82,7 @@ export default function ArsenalCarousel() {
           }
         }
         .animate-marquee {
-          animation: marquee 40s linear infinite;
+          animation: marquee 15s linear infinite;
         }
       `}</style>
     </section>
