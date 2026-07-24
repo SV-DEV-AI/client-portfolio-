@@ -17,7 +17,7 @@ export default function HeroShowreel() {
         muted
         loop
         playsInline
-        src="https://cdn.coverr.co/videos/coverr-dark-abstract-background-2580/1080p.mp4"
+        src="/hero-video.mp4"
       />
 
       {/* Film grain overlay */}
@@ -49,7 +49,7 @@ export default function HeroShowreel() {
       <Lightbox 
         isOpen={isLightboxOpen}
         onClose={() => setIsLightboxOpen(false)}
-        videoUrl="https://cdn.coverr.co/videos/coverr-dark-abstract-background-2580/1080p.mp4"
+        videoUrl="/hero-video.mp4"
       />
     </section>
   );
