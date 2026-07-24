@@ -51,6 +51,9 @@ export default function Lightbox({ isOpen, onClose, videoUrl }: LightboxProps) {
               src={videoUrl}
               autoPlay
               controls
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             />
           </motion.div>
