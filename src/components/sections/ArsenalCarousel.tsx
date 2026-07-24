@@ -21,7 +21,7 @@ const arsenalItems = [
     id: 3,
     title: "Broadcast Grade",
     description: "Redundant, fail-safe broadcast architecture ensuring flawless delivery worldwide.",
-    image: "https://images.unsplash.com/photo-1603598730416-8d197dc34c56?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070&auto=format&fit=crop",
   },
   {
     id: 4,

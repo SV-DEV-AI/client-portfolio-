@@ -4,6 +4,6 @@ export const team = [
     name: "Sajal Singh",
     role: "Audio-Visual Director & Broadcast Producer",
     bio: "With over 18 years in television and multimedia, Sajal is the driving force behind the production expertise. A science graduate and avid aeromodeller, his leadership stems from years of experience at Zee News, Aaj Tak, and Sahara. He spearheaded the successful launch packaging for 12 channels of Zee Media and is an expert in AR, VR, and Virtual Sets.",
-    image: "/images/client-library/IMG_20181120_122618.jpg",
+    image: "/sajal.jpg",
   }
 ];
