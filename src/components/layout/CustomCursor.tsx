@@ -21,6 +21,18 @@ export default function CustomCursor() {
       mouse.current = { x: e.clientX, y: e.clientY };
     };
 
+    /**
+     * Animation Loop for Custom Cursor
+     * 
+     * This function utilizes `requestAnimationFrame` to synchronize cursor updates with the 
+     * browser's native refresh rate, ensuring silky smooth movement without dropping frames.
+     * 
+     * We strictly use CSS `transform: translate3d(...)` because it forces hardware acceleration 
+     * (GPU rendering) instead of triggering expensive layout repaints on the CPU.
+     * 
+     * - The inner dot snaps instantly to the mouse position.
+     * - The outer ring uses linear interpolation (lerp) for a smooth trailing effect.
+     */
     const updateCursor = () => {
       // Smooth interpolation (lerp) for outer ring
       previous.current.x += (mouse.current.x - previous.current.x) * 0.15;
