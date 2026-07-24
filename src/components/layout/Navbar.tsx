@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Work", href: "#work" },
-  { name: "Live Events", href: "#work" },
-  { name: "Gear", href: "#gear" },
-  { name: "Contact", href: "#contact" },
+  { name: "Work", href: "/work" },
+  { name: "Services", href: "/services" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -66,15 +66,15 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
+                onClick={(e) => handleLinkClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, link.href)}
                 className="text-xs uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -108,13 +108,13 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * i + 0.2, duration: 0.5 }}
                 >
-                  <a
+                  <Link
                     href={link.href}
                     className="text-4xl font-sans font-bold uppercase tracking-widest hover:text-gray-300 transition-colors"
                     onClick={(e) => handleLinkClick(e, link.href)}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </motion.div>
               ))}
             </nav>
