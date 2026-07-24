@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Youtube } from "lucide-react";
 
 const navLinks = [
   { name: "Work", href: "/work" },
@@ -60,11 +60,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center w-full">
           <Link href="/" className="relative z-50 flex items-center gap-3">
             <Image 
-              src="/morphed-studio-logo.png"
+              src="/logo.png"
               alt="Morphed Studio Logo"
               width={160}
               height={50}
-              className="h-10 w-auto object-contain brightness-0 invert"
+              className="h-10 w-auto object-contain"
               priority
             />
           </Link>
@@ -82,6 +82,15 @@ export default function Navbar() {
                 <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+            <Link
+              href="https://youtube.com/@morphedstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-[#FF0000] transition-colors ml-4"
+              aria-label="YouTube Channel"
+            >
+              <Youtube size={20} />
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -93,6 +102,17 @@ export default function Navbar() {
           >
             {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
+          
+          {/* Mobile YouTube Link */}
+          <Link
+            href="https://youtube.com/@morphedstudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden relative z-50 text-gray-300 hover:text-[#FF0000] p-2 flex items-center justify-center transition-colors"
+            aria-label="YouTube Channel"
+          >
+            <Youtube size={24} />
+          </Link>
         </div>
       </header>
 

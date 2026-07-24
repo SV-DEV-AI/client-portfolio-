@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     description: "Elite Audio-Visual Director and Broadcast Producer specializing in high-end live events, broadcast design, and immersive AV solutions.",
     siteName: "Morphed Studio",
     url: "https://morphed.studio",
-    images: [{ url: "/morphed-studio-logo.png" }],
+    images: [{ url: "/logo.png" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Morphed Studio by Sajal Singh",
     description: "Elite Audio-Visual Director and Broadcast Producer specializing in high-end live events, broadcast design, and immersive AV solutions.",
-    images: ["/morphed-studio-logo.png"],
+    images: ["/logo.png"],
   },
   alternates: {
     canonical: "https://morphed.studio",

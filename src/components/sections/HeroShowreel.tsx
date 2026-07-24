@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 export default function HeroShowreel() {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleMute = () => {
@@ -14,10 +14,10 @@ export default function HeroShowreel() {
     }
   };
 
-  // Ensure video stays muted on initial load for autoplay policies
+  // Ensure video stays unmuted on initial load if possible
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.muted = true;
+      videoRef.current.muted = false;
     }
   }, []);
 
@@ -28,7 +28,6 @@ export default function HeroShowreel() {
         ref={videoRef}
         className="video-canvas opacity-70"
         autoPlay
-        muted
         loop
         playsInline
       >

@@ -34,7 +34,6 @@ export default function Hero() {
           
           <video 
             autoPlay 
-            muted 
             loop 
             playsInline 
             preload="metadata"

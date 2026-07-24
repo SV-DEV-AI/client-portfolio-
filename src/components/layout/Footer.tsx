@@ -15,11 +15,11 @@ export default function Footer() {
           <div className="max-w-xl">
             <h2 className="sr-only">{company.name}</h2>
             <Image 
-              src="/morphed-studio-logo.png"
+              src="/logo.png"
               alt="Morphed Studio Logo"
               width={200}
               height={60}
-              className="h-12 w-auto object-contain brightness-0 invert mb-6"
+              className="h-12 w-auto object-contain mb-6 bg-white/5 p-2 rounded-lg backdrop-blur-sm"
             />
             <p className="text-gray-400 text-sm md:text-base uppercase tracking-widest leading-relaxed">
               {company.tagline}
