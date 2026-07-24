@@ -1,6 +1,7 @@
 "use client";
 
 import { company } from "@/data/company";
+import Image from "next/image";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -12,9 +13,14 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-16">
           <div className="max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-sans font-bold uppercase tracking-tighter mb-4">
-              {company.name}
-            </h2>
+            <h2 className="sr-only">{company.name}</h2>
+            <Image 
+              src="/morphed-studio-logo.png"
+              alt="Morphed Studio Logo"
+              width={200}
+              height={60}
+              className="h-12 w-auto object-contain brightness-0 invert mb-6"
+            />
             <p className="text-gray-400 text-sm md:text-base uppercase tracking-widest leading-relaxed">
               {company.tagline}
             </p>

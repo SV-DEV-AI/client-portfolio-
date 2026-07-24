@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, HTMLMotionProps } from "framer-motion";
+import { motion, HTMLMotionProps, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface RevealOnScrollProps extends HTMLMotionProps<"div"> {
@@ -24,14 +24,19 @@ export default function RevealOnScroll({
     none: { x: 0, y: 0 },
   };
 
+  const shouldReduceMotion = useReducedMotion();
+
+  const initialVariant = shouldReduceMotion ? { opacity: 0 } : { opacity: 0, ...directions[direction] };
+  const animateVariant = { opacity: 1, x: 0, y: 0 };
+
   return (
     <motion.div
-      initial={{ opacity: 0, ...directions[direction] }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      initial={initialVariant}
+      whileInView={animateVariant}
       viewport={{ once: true, margin: "-100px" }}
       transition={{
-        duration: 0.8,
-        delay,
+        duration: shouldReduceMotion ? 0.1 : 0.8,
+        delay: shouldReduceMotion ? 0 : delay,
         ease: [0.22, 1, 0.36, 1],
       }}
       className={cn("", className)}

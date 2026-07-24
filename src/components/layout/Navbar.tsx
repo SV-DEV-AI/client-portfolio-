@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -58,9 +59,14 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center w-full">
           <Link href="/" className="relative z-50 flex items-center gap-3">
-            <div className="text-xl font-bold tracking-widest uppercase text-white">
-              Sajal Singh
-            </div>
+            <Image 
+              src="/morphed-studio-logo.png"
+              alt="Morphed Studio Logo"
+              width={160}
+              height={50}
+              className="h-10 w-auto object-contain brightness-0 invert"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

@@ -1,5 +1,5 @@
 export const company = {
-  name: "Sajal Singh",
+  name: "Morphed Studio by Sajal Singh",
   tagline: "Audio-Visual Director & Broadcast Producer",
   founded: "2019",
   email: "themorphed@gmail.com",

@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
 import Lightbox from "@/components/ui/Lightbox";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function HeroShowreel() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black" id="hero">
@@ -27,9 +28,9 @@ export default function HeroShowreel() {
       {/* Content overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: shouldReduceMotion ? 0.1 : 1, ease: "easeOut" }}
           className="text-center"
         >
           <button
