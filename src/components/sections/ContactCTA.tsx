@@ -14,7 +14,7 @@ export default function ContactCTA() {
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   return (
-    <section ref={containerRef} className="relative py-40 md:py-60 overflow-hidden bg-black flex items-center justify-center border-t border-white/10" id="contact">
+    <section ref={containerRef} className="relative py-24 md:py-32 overflow-hidden bg-black flex items-center justify-center border-t border-white/10" id="contact">
       {/* Parallax Background Elements */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 opacity-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/10 rounded-full mix-blend-overlay" />

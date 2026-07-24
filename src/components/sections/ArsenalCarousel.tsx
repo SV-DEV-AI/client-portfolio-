@@ -40,7 +40,7 @@ export default function ArsenalCarousel() {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-65%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-black" id="gear">
+    <section ref={targetRef} className="relative h-[150vh] bg-black" id="gear">
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         
         <div className="px-6 md:px-12 mb-12">
