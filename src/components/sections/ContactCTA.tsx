@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 export default function ContactCTA() {
@@ -33,7 +32,7 @@ export default function ContactCTA() {
         >
           <span className="text-sm font-bold uppercase tracking-widest mb-6 block text-gray-400">Ready to start?</span>
           <h2 className="text-5xl md:text-8xl font-sans font-bold leading-[0.9] tracking-tighter mb-12 max-w-5xl mx-auto uppercase">
-            Let's create <br/> something iconic.
+            Let&apos;s create <br/> something iconic.
           </h2>
           
           <div className="flex justify-center">

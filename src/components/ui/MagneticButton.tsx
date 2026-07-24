@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -20,16 +20,9 @@ export default function MagneticButton({
 }: MagneticButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isPointer, setIsPointer] = useState(true);
-
-  // Run on mount to check if it's a touch device
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(pointer: fine)");
-    setIsPointer(mediaQuery.matches);
-  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!buttonRef.current || !isPointer) return;
+    if (!buttonRef.current || (typeof window !== 'undefined' && !window.matchMedia("(pointer: fine)").matches)) return;
     const { clientX, clientY } = e;
     const { width, height, left, top } = buttonRef.current.getBoundingClientRect();
     const x = clientX - (left + width / 2);
@@ -38,7 +31,9 @@ export default function MagneticButton({
   };
 
   const handleMouseLeave = () => {
-    if (isPointer) setPosition({ x: 0, y: 0 });
+    if (typeof window !== 'undefined' && window.matchMedia("(pointer: fine)").matches) {
+      setPosition({ x: 0, y: 0 });
+    }
   };
 
   const variants = {

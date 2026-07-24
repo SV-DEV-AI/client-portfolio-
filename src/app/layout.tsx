@@ -19,21 +19,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Morphed Studios | AV & Broadcast Graphics Production House",
-    template: "%s | Morphed Studios",
+    default: "Sajal Singh | Audio-Visual Director & Broadcast Producer",
+    template: "%s | Sajal Singh",
   },
-  description: "A premier creative agency specializing in broadcast design, high-end film production, and immersive AV solutions.",
+  description: "Elite solo Audio-Visual Director and Broadcast Producer specializing in high-end live events, broadcast design, and immersive AV solutions.",
   openGraph: {
     type: "website",
-    title: "Morphed Studios | AV & Broadcast Graphics Production House",
-    description: "A premier creative agency specializing in broadcast design, high-end film production, and immersive AV solutions.",
-    siteName: "Morphed Studios",
+    title: "Sajal Singh | Audio-Visual Director",
+    description: "Elite solo Audio-Visual Director and Broadcast Producer specializing in high-end live events, broadcast design, and immersive AV solutions.",
+    siteName: "Sajal Singh Portfolio",
     url: "https://morphed.studio", // Update with actual domain
   },
   twitter: {
     card: "summary_large_image",
-    title: "Morphed Studios | AV & Broadcast Graphics Production House",
-    description: "A premier creative agency specializing in broadcast design, high-end film production, and immersive AV solutions.",
+    title: "Sajal Singh | Audio-Visual Director",
+    description: "Elite solo Audio-Visual Director and Broadcast Producer specializing in high-end live events, broadcast design, and immersive AV solutions.",
   },
 };
 
