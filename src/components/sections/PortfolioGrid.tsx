@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { projects } from "@/data/projects";
 
 const categories = ["All", "Commercials", "Broadcast", "Live Events"];
@@ -50,10 +51,12 @@ export default function PortfolioGrid() {
               >
                 <div className={`relative w-full ${project.aspectRatio === '16:9' ? 'aspect-video' : project.aspectRatio === '9:16' ? 'aspect-[9/16]' : project.aspectRatio === '4:3' ? 'aspect-[4/3]' : 'aspect-square'}`}>
                   {/* Thumbnail */}
-                  <img
+                  <Image
                     src={project.thumbnail}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-opacity duration-500 group-hover:opacity-0"
                   />
                   {/* Hover Video */}
                   <video
@@ -62,6 +65,7 @@ export default function PortfolioGrid() {
                     muted
                     loop
                     playsInline
+                    preload="none"
                     className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   />
                 </div>

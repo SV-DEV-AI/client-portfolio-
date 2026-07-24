@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const arsenalItems = [
   {
@@ -57,10 +58,12 @@ export default function ArsenalCarousel() {
               key={item.id} 
               className="relative w-[85vw] md:w-[45vw] lg:w-[35vw] h-[50vh] md:h-[60vh] overflow-hidden group rounded-sm"
             >
-              <img 
+              <Image 
                 src={item.image} 
                 alt={item.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100 grayscale hover:grayscale-0"
+                fill
+                sizes="(max-width: 768px) 85vw, (max-width: 1200px) 45vw, 35vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100 grayscale hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end pointer-events-none">
                 <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-2">

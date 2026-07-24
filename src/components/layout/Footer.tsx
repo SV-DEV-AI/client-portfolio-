@@ -16,7 +16,7 @@ export default function Footer() {
               {company.name}
             </h2>
             <p className="text-gray-400 text-sm md:text-base uppercase tracking-widest leading-relaxed">
-              {company.role}
+              {company.tagline}
             </p>
           </div>
           

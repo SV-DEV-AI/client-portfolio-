@@ -70,7 +70,7 @@ export default function CustomCursor() {
       />
       <div 
         ref={cursorRef}
-        className="fixed top-0 left-0 w-10 h-10 border border-white/50 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out hidden md:block mix-blend-difference"
+        className="fixed top-0 left-0 w-10 h-10 border border-white/50 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 hidden md:block mix-blend-difference"
         style={{ willChange: 'transform' }}
       />
     </>
