@@ -17,8 +17,9 @@ export default function HeroShowreel() {
         muted
         loop
         playsInline
-        src="/hero-video.mp4"
-      />
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
 
       {/* Film grain overlay */}
       <div className="absolute inset-0 film-grain" />

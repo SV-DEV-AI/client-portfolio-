@@ -48,14 +48,15 @@ export default function Lightbox({ isOpen, onClose, videoUrl }: LightboxProps) {
             className="w-full max-w-6xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl relative"
           >
             <video
-              src={videoUrl}
               autoPlay
               controls
               loop
               muted
               playsInline
               className="w-full h-full object-cover"
-            />
+            >
+              <source src={videoUrl} type="video/mp4" />
+            </video>
           </motion.div>
         </motion.div>
       )}
