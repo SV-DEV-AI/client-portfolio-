@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Work", href: "/work" },
-  { name: "Services", href: "/services" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Work", href: "#work" },
+  { name: "Live Events", href: "#events" },
+  { name: "Gear", href: "#gear" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -37,44 +37,50 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsMobileMenuOpen(false);
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <>
       <header
         className={cn(
-          "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300 rounded-full",
-          isScrolled ? "py-3 px-6 glass-panel" : "py-4 px-6 bg-transparent"
+          "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1400px] transition-all duration-300",
+          isScrolled ? "py-4 px-8 glass-panel rounded-full" : "py-6 px-8 bg-transparent"
         )}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center w-full">
           <Link href="/" className="relative z-50 flex items-center gap-3">
-            <div className="flex flex-col">
-              <div className="flex items-end leading-none -mb-1">
-                <span className="text-3xl font-black tracking-tighter text-white">M</span>
-                <span className="text-3xl font-black tracking-tighter text-accent-primary">S</span>
-              </div>
-              <div className="text-[9px] font-bold uppercase tracking-widest mt-1">
-                morphed<span className="text-accent-primary">studio</span>
-              </div>
+            <div className="text-xl font-bold tracking-widest uppercase text-white">
+              Sajal Singh
             </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                className="text-xs uppercase tracking-[0.2em] font-medium text-foreground hover:text-accent-primary transition-colors relative group"
+                onClick={(e) => handleLinkClick(e, link.href)}
+                className="text-xs uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-2 left-0 w-0 h-px bg-accent-primary transition-all duration-300 group-hover:w-full" />
-              </Link>
+                <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
+              </a>
             ))}
           </nav>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden relative z-50 text-foreground p-2 w-12 h-12 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary rounded-full"
+            className="md:hidden relative z-50 text-white p-2 w-12 h-12 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -102,13 +108,13 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * i + 0.2, duration: 0.5 }}
                 >
-                  <Link
+                  <a
                     href={link.href}
-                    className="text-4xl font-display font-bold uppercase tracking-tight hover:text-accent-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-4xl font-sans font-bold uppercase tracking-widest hover:text-gray-300 transition-colors"
+                    onClick={(e) => handleLinkClick(e, link.href)}
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
             </nav>

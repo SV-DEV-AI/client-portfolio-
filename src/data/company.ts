@@ -1,6 +1,6 @@
 export const company = {
-  name: "Morphed Studios Private Limited",
-  tagline: "An Innovations Company",
+  name: "Sajal Singh",
+  tagline: "Audio-Visual Director & Broadcast Producer",
   founded: "2019",
   email: "themorphed@gmail.com",
   phone: "+91 98119 94104",

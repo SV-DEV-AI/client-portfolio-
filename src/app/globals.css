@@ -29,6 +29,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 html, body {
   overflow-x: hidden;
   width: 100%;
