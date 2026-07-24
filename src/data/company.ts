@@ -14,7 +14,8 @@ export const company = {
     country: "India",
   },
   socials: {
-    youtube: "https://www.youtube.com/channel/UC5jIuCqvUB7F2ZLteiru72g",
+    youtube: "https://youtube.com/@morphedstudios?si=8_lP1EmmDsnh2PVw",
+    instagram: "https://www.instagram.com/morphed.studios?igsh=ZmhwdjdpcHJtbnM4",
     facebook: "https://www.facebook.com/morphedstudios/",
     linkedin: "https://www.linkedin.com/company/morphed-studios/",
   },

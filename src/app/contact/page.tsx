@@ -93,6 +93,9 @@ export default function ContactPage() {
                   <a href={company.socials.youtube} target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full border border-white/10 hover:border-accent-primary hover:text-accent-primary transition-all text-sm font-bold uppercase tracking-widest">
                     YouTube
                   </a>
+                  <a href={company.socials.instagram} target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full border border-white/10 hover:border-accent-primary hover:text-accent-primary transition-all text-sm font-bold uppercase tracking-widest">
+                    Instagram
+                  </a>
                   <a href={company.socials.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full border border-white/10 hover:border-accent-primary hover:text-accent-primary transition-all text-sm font-bold uppercase tracking-widest">
                     LinkedIn
                   </a>
