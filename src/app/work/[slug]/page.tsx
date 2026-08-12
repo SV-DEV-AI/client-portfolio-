@@ -107,32 +107,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             </RevealOnScroll>
             
-            {/* Gallery Placeholder */}
-            <div className="space-y-8 mb-32">
-              <RevealOnScroll direction="up">
-                <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-surface">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                    Project Visual 1
-                  </div>
-                </div>
-              </RevealOnScroll>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <RevealOnScroll direction="up">
-                  <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-surface">
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                      Project Visual 2
-                    </div>
-                  </div>
-                </RevealOnScroll>
-                <RevealOnScroll direction="up" delay={0.1}>
-                  <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-surface">
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                      Project Visual 3
-                    </div>
-                  </div>
-                </RevealOnScroll>
-              </div>
-            </div>
+
           </div>
         </div>
         
