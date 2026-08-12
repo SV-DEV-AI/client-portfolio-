@@ -37,9 +37,9 @@ export default function MagneticButton({
   };
 
   const variants = {
-    primary: "bg-accent-primary text-white hover:bg-accent-primary/90 border-transparent",
-    secondary: "bg-surface text-white hover:bg-surface-hover border-transparent",
-    outline: "bg-transparent text-foreground border-white/20 hover:bg-white/5",
+    primary: "bg-accent-primary text-white hover:bg-accent-primary/90 border border-white/5 shadow-sm",
+    secondary: "bg-surface text-white hover:bg-surface-hover border border-white/5",
+    outline: "bg-transparent text-foreground border border-white/10 hover:bg-white/5",
   };
 
   return (
@@ -48,9 +48,9 @@ export default function MagneticButton({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.1 }}
       className={cn(
-        "relative flex items-center justify-center px-8 py-4 rounded-full font-medium transition-colors duration-300 border magnetic overflow-hidden group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "relative flex items-center justify-center px-8 py-4 rounded-full font-medium transition-all duration-300 magnetic overflow-hidden group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         variants[variant],
         className
       )}

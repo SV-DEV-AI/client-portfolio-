@@ -19,7 +19,7 @@ export default function PortfolioShowcase() {
   );
 
   return (
-    <section className="py-24 md:py-40 bg-background relative z-10">
+    <section className="py-24 px-6 md:px-12 relative overflow-hidden" id="work">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div className="max-w-2xl mb-8 md:mb-0">

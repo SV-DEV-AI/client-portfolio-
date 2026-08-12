@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --accent-primary: #D42427;
-  --accent-secondary: #9B1B1E;
-  --surface: #1a1a1a;
-  --surface-hover: #242424;
+  --background: #0B0B0B;
+  --secondary: #101010;
+  --surface: #151515;
+  --warm-charcoal: #1A1816;
+  --warm-stone: #211D1A;
+  --accent-primary: #8F7A63;
+  --foreground: #F5F3EF;
+  --text-secondary: #BDB7AF;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent-primary: var(--accent-primary);
-  --color-accent-secondary: var(--accent-secondary);
+  --color-secondary: var(--secondary);
   --color-surface: var(--surface);
-  --color-surface-hover: var(--surface-hover);
+  --color-warm-charcoal: var(--warm-charcoal);
+  --color-warm-stone: var(--warm-stone);
+  --color-accent-primary: var(--accent-primary);
+  --color-foreground: var(--foreground);
+  --color-text-secondary: var(--text-secondary);
 
   --font-display: var(--font-outfit), sans-serif;
   --font-sans: var(--font-inter), sans-serif;
@@ -23,6 +27,9 @@
 
 body {
   background-color: var(--background);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(33, 29, 26, 0.04), transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(143, 122, 99, 0.03), transparent 50%);
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

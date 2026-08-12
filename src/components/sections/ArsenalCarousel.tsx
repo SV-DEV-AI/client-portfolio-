@@ -34,7 +34,7 @@ export default function ArsenalCarousel() {
   const marqueeItems = [...arsenalItems, ...arsenalItems, ...arsenalItems];
 
   return (
-    <section className="relative py-24 bg-black overflow-hidden" id="gear">
+    <section className="py-24 overflow-hidden relative" id="arsenal">
       <div className="container mx-auto px-6 md:px-12 mb-12">
         <h2 className="text-5xl md:text-7xl font-sans font-bold uppercase tracking-tighter text-white">
           The Arsenal

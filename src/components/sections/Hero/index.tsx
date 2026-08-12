@@ -27,7 +27,7 @@ export default function Hero() {
 
   return (
     <>
-      <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden bg-black film-grain">
+      <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden film-grain">
         <VideoBackground y={y} opacity={opacity} />
 
         {/* Clean Play Button Overlay */}

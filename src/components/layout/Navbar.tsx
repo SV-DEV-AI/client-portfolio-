@@ -76,7 +76,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, link.href)}
-                className="text-xs uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors relative group"
+                className="text-sm uppercase tracking-[0.2em] font-bold text-gray-300 hover:text-white transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />

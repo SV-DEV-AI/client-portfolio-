@@ -15,7 +15,7 @@ export default function HeroShowreel() {
   };
 
   return (
-    <section className="relative w-full h-[100dvh] overflow-hidden bg-black" id="hero">
+    <section className="relative w-full h-[100dvh] overflow-hidden" id="hero">
       {/* Background Video */}
       <video
         ref={videoRef}

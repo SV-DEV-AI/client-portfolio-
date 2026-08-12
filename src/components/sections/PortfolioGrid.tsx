@@ -15,7 +15,7 @@ export default function PortfolioGrid() {
   );
 
   return (
-    <section className="py-24 px-6 md:px-12 bg-background min-h-screen" id="work">
+    <section className="py-24 px-6 md:px-12 min-h-screen" id="work">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <h2 className="text-5xl md:text-7xl font-sans font-bold uppercase tracking-tighter">
@@ -47,7 +47,7 @@ export default function PortfolioGrid() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 key={project.id}
-                className="relative group overflow-hidden bg-surface rounded-sm break-inside-avoid"
+                className="relative group overflow-hidden bg-surface rounded-xl border border-white/5 shadow-2xl break-inside-avoid"
               >
                 <div className={`relative w-full ${project.aspectRatio === '16:9' ? 'aspect-video' : project.aspectRatio === '9:16' ? 'aspect-[9/16]' : project.aspectRatio === '4:3' ? 'aspect-[4/3]' : 'aspect-square'}`}>
                   {/* Thumbnail */}

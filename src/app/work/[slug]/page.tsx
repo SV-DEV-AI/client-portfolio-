@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <div className="bg-background min-h-screen pb-32">
+    <article className="min-h-screen pb-32">
       {/* Hero Section */}
       <div className="relative h-[70vh] md:h-screen w-full">
         <Image
@@ -154,6 +154,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
         </RevealOnScroll>
       </div>
-    </div>
+    </article>
   );
 }
