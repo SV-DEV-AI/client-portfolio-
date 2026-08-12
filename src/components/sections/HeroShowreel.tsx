@@ -32,6 +32,9 @@ export default function HeroShowreel() {
       {/* Film grain overlay */}
       <div className="absolute inset-0 film-grain pointer-events-none" />
 
+      {/* Soft gradient fade into next section */}
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-background pointer-events-none z-10" />
+
       {/* Audio Toggle Button */}
       <button
         onClick={toggleMute}
