@@ -7,39 +7,6 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import { company } from "@/data/company";
 
 export default function ContactPage() {
-  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormStatus("submitting");
-    
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/themorphed@gmail.com", {
-        method: "POST",
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-      
-      if (response.ok) {
-        setFormStatus("success");
-        e.currentTarget.reset();
-        setTimeout(() => setFormStatus("idle"), 5000);
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong. Please try emailing us directly at themorphed@gmail.com");
-      setFormStatus("idle");
-    }
-  };
-
   return (
     <div className="min-h-screen pt-32 md:pt-40 pb-32">
       <div className="container mx-auto px-6 md:px-12">
@@ -131,81 +98,76 @@ export default function ContactPage() {
             <RevealOnScroll direction="up" delay={0.4} className="bg-surface border border-white/5 p-8 md:p-12 rounded-3xl">
               <h3 className="text-3xl font-display font-bold mb-8">Send us a message</h3>
               
-              {formStatus === "success" ? (
-                <div className="h-96 flex flex-col items-center justify-center text-center">
-                  <div className="w-20 h-20 bg-accent-primary/20 rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle className="w-10 h-10 text-accent-primary" />
-                  </div>
-                  <h4 className="text-2xl font-bold mb-4">Message Sent!</h4>
-                  <p className="text-gray-400">Thank you for reaching out. We&apos;ll get back to you shortly.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Name</label>
-                      <input 
-                        type="text" 
-                        id="name" 
-                        name="name"
-                        autoComplete="name"
-                        required
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-all duration-300 hover:bg-white/10 focus:bg-white/10 shadow-inner"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Email</label>
-                      <input 
-                        type="email" 
-                        id="email" 
-                        name="email"
-                        autoComplete="email"
-                        required
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-all duration-300 hover:bg-white/10 focus:bg-white/10 shadow-inner"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                  </div>
-                  
+              <form action="https://formsubmit.co/themorphed@gmail.com" method="POST" className="space-y-8">
+                {/* FormSubmit Configuration */}
+                <input type="hidden" name="_subject" value="New Project Inquiry - Morphed Studio" />
+                <input type="hidden" name="_template" value="table" />
+                {/* We use an empty _next value, but formsubmit will just use their default thank you page which works perfectly */}
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label htmlFor="project" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Project Type</label>
-                    <select 
-                      id="project" 
-                      name="project"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-all duration-300 hover:bg-white/10 focus:bg-white/10 shadow-inner appearance-none"
-                    >
-                      <option value="" disabled defaultValue="">Select a project type...</option>
-                      <option value="Brand Identity">Brand Identity</option>
-                      <option value="Film Production">Film Production</option>
-                      <option value="Broadcast Design">Broadcast Design</option>
-                      <option value="Motion Graphics">Motion Graphics</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Message</label>
-                    <textarea 
-                      id="message" 
-                      name="message"
-                      rows={5}
+                    <label htmlFor="name" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Name</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name"
+                      autoComplete="name"
                       required
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-all duration-300 resize-none hover:bg-white/10 focus:bg-white/10 shadow-inner"
-                      placeholder="Tell us about your project..."
-                    ></textarea>
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-all duration-300 hover:bg-white/10 focus:bg-white/10 shadow-inner"
+                      placeholder="John Doe"
+                    />
                   </div>
-                  
-                  <button 
-                    type="submit"
-                    disabled={formStatus === "submitting"}
-                    className={`w-full flex items-center justify-center space-x-2 bg-white text-black font-medium py-5 rounded-xl hover:bg-accent-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors duration-300 ${formStatus === "submitting" ? "opacity-70 cursor-wait" : ""}`}
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Email</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email"
+                      autoComplete="email"
+                      required
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-all duration-300 hover:bg-white/10 focus:bg-white/10 shadow-inner"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="project" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Project Type</label>
+                  <select 
+                    id="project" 
+                    name="project"
+                    defaultValue=""
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-all duration-300 hover:bg-white/10 focus:bg-white/10 shadow-inner appearance-none"
                   >
-                    <span>{formStatus === "submitting" ? "Sending..." : "Send Message"}</span>
-                    {formStatus === "idle" && <Send size={18} />}
-                  </button>
-                </form>
-              )}
+                    <option value="" disabled>Select a project type...</option>
+                    <option value="Brand Identity">Brand Identity</option>
+                    <option value="Film Production">Film Production</option>
+                    <option value="Broadcast Design">Broadcast Design</option>
+                    <option value="Motion Graphics">Motion Graphics</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Message</label>
+                  <textarea 
+                    id="message" 
+                    name="message"
+                    rows={5}
+                    required
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-all duration-300 resize-none hover:bg-white/10 focus:bg-white/10 shadow-inner"
+                    placeholder="Tell us about your project..."
+                  ></textarea>
+                </div>
+                
+                <button 
+                  type="submit"
+                  className="w-full flex items-center justify-center space-x-2 bg-white text-black font-medium py-5 rounded-xl hover:bg-accent-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary transition-colors duration-300"
+                >
+                  <span>Send Message</span>
+                  <Send size={18} />
+                </button>
+              </form>
             </RevealOnScroll>
           </div>
         </div>
