@@ -9,15 +9,35 @@ import { company } from "@/data/company";
 export default function ContactPage() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus("submitting");
-    // Simulate API call
-    setTimeout(() => {
-      setFormStatus("success");
-      // Reset after 3 seconds
-      setTimeout(() => setFormStatus("idle"), 3000);
-    }, 1500);
+    
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/themorphed@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      
+      if (response.ok) {
+        setFormStatus("success");
+        e.currentTarget.reset();
+        setTimeout(() => setFormStatus("idle"), 5000);
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try emailing us directly at themorphed@gmail.com");
+      setFormStatus("idle");
+    }
   };
 
   return (
@@ -152,6 +172,7 @@ export default function ContactPage() {
                     <label htmlFor="project" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Project Type</label>
                     <select 
                       id="project" 
+                      name="project"
                       className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-colors appearance-none"
                     >
                       <option value="" disabled defaultValue="">Select a project type...</option>
@@ -167,6 +188,7 @@ export default function ContactPage() {
                     <label htmlFor="message" className="text-sm font-medium text-gray-400 uppercase tracking-widest">Message</label>
                     <textarea 
                       id="message" 
+                      name="message"
                       rows={5}
                       required
                       className="w-full bg-background border border-white/10 rounded-xl px-4 py-4 text-white text-base focus:outline-none focus:border-accent-primary transition-colors resize-none"
