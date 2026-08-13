@@ -42,9 +42,24 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://morphed.studio",
   },
+  authors: [{ name: "Sajal Singh" }],
+  creator: "Sajal Singh",
+  publisher: "Morphed Studio",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
