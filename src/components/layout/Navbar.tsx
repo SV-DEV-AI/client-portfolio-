@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { company } from "@/data/company";
 
 const navLinks = [
   { name: "Work", href: "/work" },
@@ -83,7 +84,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="https://youtube.com/@morphedstudio"
+              href={company.socials.youtube}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-[#FF0000] transition-colors ml-4"
@@ -105,7 +106,7 @@ export default function Navbar() {
           
           {/* Mobile YouTube Link */}
           <Link
-            href="https://youtube.com/@morphedstudio"
+            href={company.socials.youtube}
             target="_blank"
             rel="noopener noreferrer"
             className="md:hidden relative z-50 text-gray-300 hover:text-[#FF0000] p-2 flex items-center justify-center transition-colors"
