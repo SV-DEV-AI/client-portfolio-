@@ -19,28 +19,25 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Morphed Studio by Sajal Singh | Audio-Visual Director",
+    default: "Morphed Studio | Audio-Visual Director & Broadcast Producer",
     template: "%s | Morphed Studio",
   },
   description: "Elite Audio-Visual Director and Broadcast Producer specializing in high-end live events, broadcast design, and immersive AV solutions.",
   keywords: ["Audio-Visual Director", "Broadcast Producer", "Live Events", "Morphed Studio", "Sajal Singh", "AV Solutions", "Broadcast Design"],
-  metadataBase: new URL("https://morphed.studio"),
+  metadataBase: new URL("https://www.morphedstudios.co.in"),
   openGraph: {
     type: "website",
-    title: "Morphed Studio by Sajal Singh",
+    title: "Morphed Studio | Audio-Visual Director",
     description: "Elite Audio-Visual Director and Broadcast Producer specializing in high-end live events, broadcast design, and immersive AV solutions.",
     siteName: "Morphed Studio",
-    url: "https://morphed.studio",
+    url: "https://www.morphedstudios.co.in",
     images: [{ url: "/logo.png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Morphed Studio by Sajal Singh",
+    title: "Morphed Studio | Audio-Visual Director",
     description: "Elite Audio-Visual Director and Broadcast Producer specializing in high-end live events, broadcast design, and immersive AV solutions.",
     images: ["/logo.png"],
-  },
-  alternates: {
-    canonical: "https://morphed.studio",
   },
   authors: [{ name: "Sajal Singh" }],
   creator: "Sajal Singh",
@@ -82,10 +79,11 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Sajal Singh",
               "jobTitle": "Audio-Visual Director",
-              "url": "https://morphed.studio",
+              "url": "https://www.morphedstudios.co.in",
               "worksFor": {
                 "@type": "Organization",
-                "name": "Morphed Studio"
+                "name": "Morphed Studio",
+                "url": "https://www.morphedstudios.co.in"
               }
             })
           }}

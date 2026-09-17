@@ -24,7 +24,7 @@ export default function HeroShowreel() {
         loop
         playsInline
         muted
-        preload="auto"
+        preload="metadata"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
@@ -32,13 +32,18 @@ export default function HeroShowreel() {
       {/* Film grain overlay */}
       <div className="absolute inset-0 film-grain pointer-events-none" />
 
+      {/* Screen reader only H1 for SEO, descriptive of the content */}
+      <div className="sr-only">
+        <h1>Morphed Studios - Audio-Visual Direction and Broadcast Production</h1>
+      </div>
+
       {/* Soft gradient fade into next section */}
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-background pointer-events-none z-10" />
 
       {/* Audio Toggle Button */}
       <button
         onClick={toggleMute}
-        className="absolute bottom-8 right-8 z-50 p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300 group"
+        className="absolute bottom-8 right-8 z-50 p-3 md:p-4 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300 group"
         aria-label={isMuted ? "Unmute video" : "Mute video"}
       >
         {isMuted ? (

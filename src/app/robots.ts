@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://morphed.studio/sitemap.xml',
+    sitemap: 'https://www.morphedstudios.co.in/sitemap.xml',
   };
 }

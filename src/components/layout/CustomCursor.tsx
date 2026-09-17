@@ -40,12 +40,12 @@ export default function CustomCursor() {
 
       // Update inner dot instantly
       if (cursorDotRef.current) {
-        cursorDotRef.current.style.transform = `translate3d(${mouse.current.x}px, ${mouse.current.y}px, 0)`;
+        cursorDotRef.current.style.transform = `translate3d(${mouse.current.x - 4}px, ${mouse.current.y - 4}px, 0)`;
       }
 
       // Update outer ring smoothly
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${previous.current.x}px, ${previous.current.y}px, 0)`;
+        cursorRef.current.style.transform = `translate3d(${previous.current.x - 20}px, ${previous.current.y - 20}px, 0)`;
       }
 
       requestRef.current = requestAnimationFrame(updateCursor);
@@ -56,10 +56,10 @@ export default function CustomCursor() {
 
     // Click effect
     const onMouseDown = () => {
-      if (cursorRef.current) cursorRef.current.style.transform = `translate3d(${previous.current.x}px, ${previous.current.y}px, 0) scale(0.8)`;
+      if (cursorRef.current) cursorRef.current.style.transform = `translate3d(${previous.current.x - 20}px, ${previous.current.y - 20}px, 0) scale(0.8)`;
     };
     const onMouseUp = () => {
-      if (cursorRef.current) cursorRef.current.style.transform = `translate3d(${previous.current.x}px, ${previous.current.y}px, 0) scale(1)`;
+      if (cursorRef.current) cursorRef.current.style.transform = `translate3d(${previous.current.x - 20}px, ${previous.current.y - 20}px, 0) scale(1)`;
     };
     
     window.addEventListener("mousedown", onMouseDown);
@@ -77,12 +77,12 @@ export default function CustomCursor() {
     <>
       <div 
         ref={cursorDotRef} 
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 mix-blend-difference hidden md:block"
+        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference hidden md:block"
         style={{ willChange: 'transform' }}
       />
       <div 
         ref={cursorRef}
-        className="fixed top-0 left-0 w-10 h-10 border border-white/50 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 hidden md:block mix-blend-difference"
+        className="fixed top-0 left-0 w-10 h-10 border border-white/50 rounded-full pointer-events-none z-[9998] hidden md:block mix-blend-difference"
         style={{ willChange: 'transform' }}
       />
     </>

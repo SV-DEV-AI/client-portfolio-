@@ -1,5 +1,12 @@
 import HeroShowreel from "@/components/sections/HeroShowreel";
 import dynamic from "next/dynamic";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 const PortfolioGrid = dynamic(() => import("@/components/sections/PortfolioGrid"), { ssr: true });
 const ArsenalCarousel = dynamic(() => import("@/components/sections/ArsenalCarousel"), { ssr: true });

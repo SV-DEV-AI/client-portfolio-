@@ -83,6 +83,12 @@ export default function ArsenalCarousel() {
         }
         .animate-marquee {
           animation: marquee 15s linear infinite;
+          will-change: transform;
+        }
+        @media (max-width: 768px) {
+          .animate-marquee {
+            animation-duration: 25s;
+          }
         }
       `}</style>
     </section>

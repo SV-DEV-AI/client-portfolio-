@@ -17,7 +17,7 @@ export default function ContactCTA() {
     <section ref={containerRef} className="relative py-16 md:py-32 overflow-hidden flex items-center justify-center border-t border-white/5" id="contact">
       {/* Parallax Background Elements */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/10 rounded-full mix-blend-overlay" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(800px,200vw)] h-[min(800px,200vw)] border border-white/10 rounded-full mix-blend-overlay" />
         
         {/* Grain Overlay */}
         <div className="absolute inset-0 film-grain" />

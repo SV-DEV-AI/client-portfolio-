@@ -7,11 +7,45 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import MagneticButton from "@/components/ui/MagneticButton";
 
+import type { Metadata } from 'next';
+
 // Need to generate static params for all known projects
 export function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.id,
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.id === resolvedParams.slug);
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  return {
+    title: `${project.title} | ${project.client}`,
+    description: project.description,
+    alternates: {
+      canonical: `/work/${project.id}`,
+    },
+    openGraph: {
+      title: `${project.title} | ${project.client} | Morphed Studios`,
+      description: project.description,
+      url: `/work/${project.id}`,
+      images: [
+        {
+          url: project.thumbnail,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} - ${project.client}`,
+        },
+      ],
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

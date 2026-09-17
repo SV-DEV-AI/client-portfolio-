@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { projects } from '@/data/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://morphed.studio';
+  const baseUrl = 'https://www.morphedstudios.co.in';
 
   const mainPages: MetadataRoute.Sitemap = [
     {
