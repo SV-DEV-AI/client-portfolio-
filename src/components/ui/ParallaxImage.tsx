@@ -11,6 +11,7 @@ interface ParallaxImageProps {
   className?: string;
   priority?: boolean;
   offset?: number;
+  sizes?: string;
 }
 
 export default function ParallaxImage({
@@ -19,6 +20,7 @@ export default function ParallaxImage({
   className,
   priority = false,
   offset = 50,
+  sizes = "(max-width: 768px) 100vw, 50vw",
 }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -35,7 +37,7 @@ export default function ParallaxImage({
           src={src}
           alt={alt}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes={sizes}
           priority={priority}
           className="object-cover"
         />

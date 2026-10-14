@@ -10,6 +10,7 @@ interface ImageRevealProps {
   className?: string;
   imageClassName?: string;
   priority?: boolean;
+  sizes?: string;
 }
 
 export default function ImageReveal({
@@ -18,6 +19,7 @@ export default function ImageReveal({
   className,
   imageClassName,
   priority = false,
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw",
 }: ImageRevealProps) {
   return (
     <motion.div
@@ -38,7 +40,7 @@ export default function ImageReveal({
           src={src}
           alt={alt}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes={sizes}
           priority={priority}
           className={cn("object-cover", imageClassName)}
         />

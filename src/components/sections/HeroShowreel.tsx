@@ -25,7 +25,9 @@ export default function HeroShowreel() {
         playsInline
         muted
         preload="metadata"
+        poster="/hero-poster.jpg"
       >
+        <source src="/hero-video-faststart.mp4" type="video/mp4" />
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
 
